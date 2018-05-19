@@ -39,6 +39,40 @@ public class CityOfAaron {
         String memberOneTitle = Actor.MemberOne.getTitle();
         
         System.out.println(Actor.MemberOne.toString());
+        //CropData Class by Mitchell
+        CropData mainData = new CropData();
+        mainData.setAcresOwned(0);
+        mainData.setAcresPlanted(0);
+        mainData.setCropYield(0);
+        mainData.setEatenByRats(0);
+        mainData.setHarvest(0);
+        mainData.setHarvestAfterOffering(0);
+        mainData.setNewPeople(0);
+        mainData.setNumStarved(0);
+        mainData.setNumberWhoDied(0);
+        mainData.setOffering(0);
+        mainData.setOfferingBushels(0);
+        mainData.setPeopleFed(0);
+        mainData.setPopulation(0);
+        mainData.setWheatInStore(0);
+        mainData.setWheatForPeople(0);
+        int AcresOwned = mainData.getAcresOwned();
+        int AcresPlanted = mainData.getAcresPlanted();
+        int CropYield = mainData.getCropYield();
+        int EatenByRats = mainData.getEatenByRats();
+        int Harvest = mainData.getHarvest();
+        int HarvestAfterOffering = mainData.getHarvestAfterOffering();
+        int NewPeople = mainData.getNewPeople();
+        int NumStarved = mainData.getNumStarved();
+        int NumberWhoDied = mainData.getNumberWhoDied();
+        int Offering = mainData.getOffering();
+        int OfferingBushels = mainData.getOfferingBushels();
+        int PeopleFed = mainData.getPeopleFed();
+        int Population = mainData.getPopulation();
+        int WheatInStore = mainData.getWheatInStore();
+        int WheatForPeople = mainData.getWheatForPeople();
+                                                        
+        System.out.println(mainData.toString());
         
     }
     
