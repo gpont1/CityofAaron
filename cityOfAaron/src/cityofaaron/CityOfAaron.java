@@ -4,7 +4,7 @@
  * Spring 2018
  * Team Members: Gordon Pont, McKay Pingel, Mitchell Thomas
  */
-package byui.cit260.cityofaaron;
+package byui.cit260.cityofaaron.model;
 /* As long as the package is added, you don't need to add specific ones:
     import byui.cit260.cityOfAaron.model.Player;
     import byui.cit260.cityOfAaron.model.Actor;*/
