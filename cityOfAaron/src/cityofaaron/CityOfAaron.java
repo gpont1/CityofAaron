@@ -49,7 +49,7 @@ public class CityOfAaron {
         
         System.out.println(pillow.toString());
        
-        /*
+        
         //CropData Class by Mitchell
         CropData mainData = new CropData();
         mainData.setAcresOwned(0);
@@ -83,8 +83,7 @@ public class CityOfAaron {
         int WheatInStore = mainData.getWheatInStore();
         int WheatForPeople = mainData.getWheatForPeople();
                                                         
-        System.out.println(mainData.toString());
-        */
+        System.out.println(mainData.toString());      
         
         Location home = new Location();
         home.setDescription("Location has home");
