@@ -5,13 +5,14 @@
  */
 package byui.cit260.cityOfAaron.model;
 
+    import java.io.Serializable;
     import java.awt.Point;
 
 /**
  *
  * @author Gordon/McKay/Mitchell
  */
-public enum Actor {
+public enum Actor implements Serializable {
     
     MemberOne("Gordon", "Member 1", new Point(1,1)),
     MemberTwo("McKay", "Member 2", new Point(2,2)),
