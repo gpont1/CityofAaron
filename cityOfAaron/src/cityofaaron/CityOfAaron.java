@@ -4,11 +4,9 @@
  * Spring 2018
  * Team Members: Gordon Pont, McKay Pingel, Mitchell Thomas
  */
-package byui.cit260.cityofaaron.model;
-/* As long as the package is added, you don't need to add specific ones:
-    import byui.cit260.cityOfAaron.model.Player;
-    import byui.cit260.cityOfAaron.model.Actor;*/
+package cityofaaron;
 
+import byui.cit260.cityOfAaron.model.*;
 
 /**
  *
@@ -39,6 +37,7 @@ public class CityOfAaron {
         String memberOneTitle = Actor.MemberOne.getTitle();
         
         System.out.println(Actor.MemberOne.toString());
+        
         //CropData Class by Mitchell
         CropData mainData = new CropData();
         mainData.setAcresOwned(0);
