@@ -38,6 +38,18 @@ public class CityOfAaron {
         
         System.out.println(Actor.MemberOne.toString());
         
+        //validate ListItem Class created by Gordon
+        
+        ListItem pillow = new ListItem();
+        
+        pillow.setName("Comfy");
+        pillow.setNumber(13);
+        String pillowName = pillow.getName();
+        int pillowNumber = pillow.getNumber();
+        
+        System.out.println(pillow.toString());
+       
+        /*
         //CropData Class by Mitchell
         CropData mainData = new CropData();
         mainData.setAcresOwned(0);
@@ -72,7 +84,7 @@ public class CityOfAaron {
         int WheatForPeople = mainData.getWheatForPeople();
                                                         
         System.out.println(mainData.toString());
-        
+        */
     }
     
 }
