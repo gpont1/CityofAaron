@@ -17,6 +17,9 @@ public class ListItem implements Serializable {
     private String name;
     private int number;
 
+    public ListItem() {
+    }
+    
     public String getName() {
         return name;
     }
