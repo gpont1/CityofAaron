@@ -85,6 +85,15 @@ public class CityOfAaron {
                                                         
         System.out.println(mainData.toString());
         */
+        
+        Location home = new Location();
+        home.setDescription("Location has home");
+        home.setSymbol("House");
+        
+        String homeDescription = home.getDescription();
+        String homeSymbol = home.getSymbol();
+        
+        System.out.println(home.toString());
     }
     
 }
