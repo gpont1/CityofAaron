@@ -6,7 +6,9 @@
  */
 package cityofaaron;
 
+import byui.cit260.cityOfAaron.model.CropData;
 import byui.cit260.cityOfAaron.model.*;
+import byui.cit260.cityOfAaron.control.*;
 
 /**
  *
@@ -17,6 +19,22 @@ public class CityOfAaron {
     /**
      * @param args the command line arguments
      */
+    
+    //Test for CropControl.java
+    public static void testSellLand()
+    {
+        System.out.println("sellLand");
+        CropData theCrops = new CropData();
+        theCrops.setWheatInStore(1000);
+        theCrops.setAcresOwned(2800);
+        int toSell = 10;
+        int price = 15;
+        int expResult = 2790;
+        int result = CropControl.sellLand(price, toSell, theCrops);
+        
+        System.out.println("Bushels of wheat owned after sale: " + result);
+        //assertEquals(expResult, result);
+    }
     public static void main(String[] args) {
 
         //Create Player One
@@ -93,6 +111,9 @@ public class CityOfAaron {
         String homeSymbol = home.getSymbol();
         
         System.out.println(home.toString());
+        
+        testSellLand();
     }
+    
     
 }
