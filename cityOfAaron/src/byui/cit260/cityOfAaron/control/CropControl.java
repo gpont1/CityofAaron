@@ -43,4 +43,38 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
        return wheatInStore;
     }
 }
+
+/**
+*The feedPeople method
+*Made by Gordon Pont 
+*Purpose: to feed the people tending our land
+* @param cropData
+*@param wheatForPeople
+*@param wheatInStore
+* @return wheatInStore
+*/
+
+//Feed People Method - Created by Gordon Pont
+public static int feedPeople(CropData cropData)
+{    
+    int wheatForPeople = cropData.getWheatForPeople();
+    int wheatInStore = cropData.getWheatInStore();
+            
+            
+    if(wheatForPeople <= 0) 
+    {
+        System.out.println("Sorry, That is not a positive number!");
+        return -1;
+    } else if(wheatForPeople >= wheatInStore) 
+    {
+        System.out.println("Sorry, you don't have that much wheat");
+        return -1;
+    } else 
+    {
+        wheatInStore -= wheatForPeople;
+        cropData.setWheatInStore(wheatInStore);
+        return wheatInStore;
+    }
+}
+
 }

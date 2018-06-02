@@ -20,10 +20,10 @@ public class CityOfAaron {
      * @param args the command line arguments
      */
     
-    //Test for CropControl.java
+    //Test for sellLand Method
     public static void testSellLand()
     {
-        System.out.println("sellLand");
+        System.out.println("sellLand Test");
         CropData theCrops = new CropData();
         theCrops.setWheatInStore(1000);
         theCrops.setAcresOwned(2800);
@@ -34,6 +34,19 @@ public class CityOfAaron {
         
         System.out.println("Bushels of wheat owned after sale: " + result);
         //assertEquals(expResult, result);
+    }
+    
+    //Feed People Test - Method Created by Gordon Pont
+    public static void testFeedPeople() 
+    {
+        System.out.println("feedPeople Test");
+        CropData feedCrops = new CropData();
+        feedCrops.setWheatForPeople(4000);
+        feedCrops.setWheatInStore(5000);
+        
+        int result = CropControl.feedPeople(feedCrops);
+        
+        System.out.println("You have: " + result + " bushel(s) left in the stores");
     }
     public static void main(String[] args) {
 
@@ -113,6 +126,7 @@ public class CityOfAaron {
         System.out.println(home.toString());
         
         testSellLand();
+        testFeedPeople();
     }
     
     
