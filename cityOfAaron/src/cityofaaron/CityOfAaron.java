@@ -41,7 +41,7 @@ public class CityOfAaron {
     {
         System.out.println("feedPeople Test");
         CropData feedCrops = new CropData();
-        feedCrops.setWheatForPeople(4000);
+        feedCrops.setWheatForPeople(1000);
         feedCrops.setWheatInStore(5000);
         
         int result = CropControl.feedPeople(feedCrops);
