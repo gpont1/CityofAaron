@@ -6,19 +6,32 @@
  */
 package cityofaaron;
 
-import byui.cit260.cityOfAaron.model.CropData;
+import byui.cit260.cityOfAaron.view.MainMenuView;
 import byui.cit260.cityOfAaron.model.*;
 import byui.cit260.cityOfAaron.control.*;
+import byui.cit260.cityOfAaron.view.*;
 
-/**
- *
- * @author Gordon/McKay/Mitchell
- */
+// The City of Aaron Game
+// The driver file, contains the main() method
+// Author: Gordon,McKay,Mitchell
+// Date last modified: June 2018
+//-------------------------------------------------------------
+
 public class CityOfAaron {
-
     /**
      * @param args the command line arguments
      */
+    
+    //variable for keeping a reference to the Game Object
+    private static Game theGame = null;
+
+    public static Game getCurrentGame() {
+        return theGame;
+    }
+
+    public static void setCurrentGame(Game theGame) {
+        CityOfAaron.theGame = theGame;
+    }
     
     //Test for sellLand Method
     public static void testSellLand()
@@ -38,7 +51,7 @@ public class CityOfAaron {
     
     //Feed People Test - Method Created by Gordon Pont
     public static void testFeedPeople() 
-    {
+    {       
         System.out.println("feedPeople Test");
         CropData feedCrops = new CropData();
         feedCrops.setWheatForPeople(1000);
@@ -48,8 +61,15 @@ public class CityOfAaron {
         
         System.out.println("You have: " + result + " bushel(s) left in the stores");
     }
+    
+    // main function -entry point for the program
+    // runs the main menu
     public static void main(String[] args) {
 
+        //Week 7 Stuff
+        MainMenuView mmv = new MainMenuView();
+        mmv.displayMenuView();
+        
         //Create Player One
         Player playerOne = new Player();    
         playerOne.setName("Gordon Pont");      

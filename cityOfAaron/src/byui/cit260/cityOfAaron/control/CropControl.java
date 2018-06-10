@@ -49,8 +49,6 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
 *Made by Gordon Pont 
 *Purpose: to feed the people tending our land
 * @param cropData
-*@param wheatForPeople
-*@param wheatInStore
 * @return wheatInStore
 */
 
@@ -58,8 +56,7 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
 public static int feedPeople(CropData cropData)
 {    
     int wheatForPeople = cropData.getWheatForPeople();
-    int wheatInStore = cropData.getWheatInStore();
-            
+    int wheatInStore = cropData.getWheatInStore();         
             
     if(wheatForPeople <= 0) 
     {
