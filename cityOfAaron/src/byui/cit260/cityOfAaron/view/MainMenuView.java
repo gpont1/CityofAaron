@@ -67,7 +67,7 @@ public MainMenuView()
 * Returns: none
 */
 // ===================================
-@Override public void doAction(int option)
+  @Override public void doAction(int option)
 {
     switch (option)
     {

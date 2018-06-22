@@ -68,7 +68,7 @@ public class CityOfAaron {
 
         //Week 7 Stuff
         MainMenuView mmv = new MainMenuView();
-        mmv.displayMenuView();
+        mmv.displayMenu();
         
         //Create Player One
         Player playerOne = new Player();    

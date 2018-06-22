@@ -5,7 +5,7 @@
 package byui.cit260.cityOfAaron.view; 
 import java.util.Scanner; 
 
-public abstract class MenuView extends ViewInterface
+public abstract class MenuView implements ViewInterface
 {
     // the data members common to all menu views
     protected final static Scanner keyboard = new Scanner(System.in); 
@@ -48,7 +48,7 @@ public abstract class MenuView extends ViewInterface
         } while (menuOption != max);
 }
 
- public int getMenuOption() 
+ @Override public int getMenuOption() 
 { 
     int inputValue = 0; 
     do { System.out.format("Please enter an option(1 - %d):", max); 
