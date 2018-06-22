@@ -9,7 +9,8 @@ package byui.cit260.cityOfAaron.view;
  *
  * @author Mitchell
  */
-public class ViewInterface {
+public class ViewInterface 
+{
     public void displayMenu(); 
     public int getMenuOption(); 
     public void doAction(int option);

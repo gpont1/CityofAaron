@@ -12,7 +12,7 @@ import byui.cit260.cityOfAaron.model.Player;
  *
  * @author humbl
  */
-public class MainMenuView {
+public class MainMenuView extends MenuView{
 /**
 * The displayMenuViewmethod
 * Purpose: displays the menu, gets the user's input, and does the
@@ -38,21 +38,6 @@ public class MainMenuView {
     private String theMenu;
     private int max;
     
-public void displayMenuView() 
-{
-    int menuOption;
-    do 
-    {
-        // Display the menu
-        System.out.println(theMenu);
-        // Prompt the user and get the user’s input
-        menuOption= getMenuOption();
-        // Perform the desired action
-        doAction(menuOption);
-        // Determine and display the next view
-        
-    } while(menuOption != max);   
-}
 /**
 * The MainMenuViewconstructor
 * Purpose: Initialize the menu data
@@ -62,7 +47,7 @@ public void displayMenuView()
 // ===================================
 public MainMenuView()
 {
-    theMenu= "\n" +
+    super("\n" +
     "**********************************\n" +
     "* CITY OF AARON: MAIN GAME MENU *\n" +
     "**********************************\n" +
@@ -70,37 +55,10 @@ public MainMenuView()
     " 2 -Get and start a saved game\n" +
     " 3 -Get help on playing the game\n" +
     " 4 -Save game\n" +
-    " 5 -Quit\n";
-    max = 5;
+    " 5 -Quit\n",
+    5);
 }
 
-/**
-* The getMenuOptionmethod
-* Purpose: gets the user's input
-* Parameters: none
-* Returns: integer -the option selected
-*/
-// ===================================
-public int getMenuOption()
-{
-// declare a variable to hold user’s input
-    int userInput;
-// begin loop
-do
-{
-    // get user input from the keyboard
-    userInput= keyboard.nextInt();
-    // if it is not a valid value, output an error message
-    if (userInput< 1 || userInput> max)
-    {
-        System.out.println("Option must be between 1 and " + max);
-    }
-    // loop back to the top if input was not valid
-    // return the value input by the user
-    } while(userInput < 1 || userInput > max);
-    //return the value input by the user
-    return userInput;
-}
 
 /**
 *The doActionmethod
@@ -109,7 +67,7 @@ do
 * Returns: none
 */
 // ===================================
-public void doAction(int option)
+@Override public void doAction(int option)
 {
     switch (option)
     {
