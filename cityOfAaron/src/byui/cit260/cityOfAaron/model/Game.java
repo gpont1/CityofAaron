@@ -13,83 +13,42 @@ import java.util.Objects;
  * @author Gordon/McKay/Mitchell
  */
 public class Game implements Serializable {
-    
-    //Declare private variables
-    private String thePlayer;
-    private Player player;
-    private Map Map;
-    private CropData CropData;
-    
-    public Game() {
-    }
+private Player thePlayer;
+    private CropData cropData = null;
+    private Map theMap;
 
-    public String getThePlayer() {
+    public Player getThePlayer() {
         return thePlayer;
     }
 
-    public void setThePlayer(String thePlayer) {
+    public void setThePlayer(Player thePlayer) {
         this.thePlayer = thePlayer;
     }
-
-    public Player getPlayer() {
-        return player;
-    }
-
-    public void setPlayer(Player player) {
-        this.player = player;
-    }
-
-    public Map getMap() {
-        return Map;
-    }
-
-    public void setMap(Map Map) {
-        this.Map = Map;
-    }
-
+    
+    /**
+     * the getCrops()method
+     * Purpose: get a reference to the crop object
+     * Parameters: none
+     * Returns: a reference to a crop object
+     */
     public CropData getCropData() {
-        return CropData;
+        return cropData;
     }
-
-    public void setCropData(CropData CropData) {
-        this.CropData = CropData;
+    /**
+     * the setCrops()method
+     * Purpose: store a reference to a crop object
+     * Parameters: a reference to a crop object
+     * Returns: none
+     */
+    public void setCropData(CropData cropRef) {
+        cropData = cropRef;
     }
     
-    
-    
-    
-
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 23 * hash + Objects.hashCode(this.thePlayer);
-        return hash;
+    public Map getMap() {
+        return this.theMap;
     }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Game other = (Game) obj;
-        if (!Objects.equals(this.thePlayer, other.thePlayer)) {
-            return false;
-        }
-        return true;    
+    
+    public void setMap(Map map) {
+        theMap = map;
     }
-
-    @Override
-    public String toString() {
-        return "Game{" + "thePlayer=" + thePlayer + '}';
-    }
-   
 }
-    
-  

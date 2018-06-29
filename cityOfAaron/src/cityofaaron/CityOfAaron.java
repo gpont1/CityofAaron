@@ -24,7 +24,7 @@ public class CityOfAaron {
     
     //variable for keeping a reference to the Game Object
     private static Game theGame = null;
-
+    
     public static Game getCurrentGame() {
         return theGame;
     }
@@ -57,7 +57,7 @@ public class CityOfAaron {
         feedCrops.setWheatForPeople(1000);
         feedCrops.setWheatInStore(5000);
         
-        int result = CropControl.feedPeople(feedCrops);
+        int result = CropControl.feedPeople(100, feedCrops);
         
         System.out.println("You have: " + result + " bushel(s) left in the stores");
     }
@@ -69,7 +69,7 @@ public class CityOfAaron {
         //Week 7 Stuff
         MainMenuView mmv = new MainMenuView();
         mmv.displayMenu();
-        
+        Map theMap = new Map(6,6);
         //Create Player One
         Player playerOne = new Player();    
         playerOne.setName("Gordon Pont");      

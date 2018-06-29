@@ -44,6 +44,15 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     }
 }
 
+public static void buyLand(int landToBuy, int price, CropData cropData){
+    
+}
+public static void plantCrops(int plantedCrops, CropData cropData){
+    
+}
+public static void setOffering(int percentage, CropData cropData){
+    
+}
 /**
 *The feedPeople method
 *Made by Gordon Pont 
@@ -51,9 +60,8 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
 * @param cropData
 * @return wheatInStore
 */
-
 //Feed People Method - Created by Gordon Pont
-public static int feedPeople(CropData cropData)
+public static int feedPeople(int bushels ,CropData cropData)
 {    
     int wheatForPeople = cropData.getWheatForPeople();
     int wheatInStore = cropData.getWheatInStore();         

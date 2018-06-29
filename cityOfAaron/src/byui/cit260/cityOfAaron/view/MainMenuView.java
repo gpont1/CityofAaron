@@ -121,12 +121,14 @@ public void startNewGame()
     // welcome message
     System.out.println("Welcome " + name + ", have fun playing.");
     // call the createNewGame( ) method. Pass the name as a parameter
-    GameControl gc = new GameControl();
-    gc.createNewGame(name);
+    GameControl.createNewGame(name);
+            
     //show the game menu
-    GameMenu gmv= new GameMenu();
-    gmv.displayMenuView();
-}
+    GameMenu gmv = new GameMenu();
+    gmv.displayMenu();
+    
+    
+   }
 
 public void startSavedGame()
 {

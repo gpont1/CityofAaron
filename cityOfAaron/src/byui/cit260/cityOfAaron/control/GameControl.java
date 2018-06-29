@@ -20,19 +20,18 @@ public class GameControl {
     private static final int MAX_COL = 5;
     // reference to a Game object
     private static Game theGame;
-        
+    
     public static void createNewGame(String name)
     {
         // Created the game object. Save it in the maindriver file
-        theGame= new Game();
+        theGame = new Game();
         CityOfAaron.setCurrentGame(theGame);
         // create the player object. Save it in the game object
-        Player thePlayer= new Player();
-        thePlayer.setName(name);
-        theGame.setPlayer(thePlayer);
-        
-        displayMap();        
-        
+            Player thePlayer = new Player();
+            thePlayer.setName(name);
+            theGame.setThePlayer(thePlayer); 
+            createMap();
+             
     }
 
         public static void createCropDataObject()
@@ -69,7 +68,7 @@ public class GameControl {
         {
             // create the Map object,
             // refer to the Map constructor
-            Map theMap= new Map(MAX_ROW, MAX_COL);
+            Map theMap = new Map(MAX_ROW, MAX_COL);
             
             // create a string that will go in the Location objects
             // that contain the river
@@ -84,8 +83,8 @@ public class GameControl {
             // set this location object in each cell of the array in column 4
             for(int i= 0; i< MAX_ROW; i++)
             {
-            theMap.setLocation(i, 4, loc);
-            
+            theMap.setLocation(i, 3, loc);
+            }
             // define the string for a farm land location
             String farmland = "You are on the fertile banks of the River.\n" +
             "In the spring, this low farmland floods and is covered with rich\n" +
@@ -95,9 +94,10 @@ public class GameControl {
             loc.setDescription(farmland + "\nOnebushel will plant two acres of wheat.");
             loc.setSymbol("!!!");
             
-            for(i=0; i < MAX_ROW; i++) {
-            theMap.setLocation(i, 3, loc);
-            theMap.setLocation(i, 5, loc);
+            for(int i=0; i < MAX_ROW; i++) {
+            theMap.setLocation(i, 2, loc);
+            theMap.setLocation(i, 4, loc);
+            
             }
             
             //Create Forest 
@@ -105,12 +105,13 @@ public class GameControl {
                     "Be careful of any Lamanites you see around,\n" + 
                     "They can be VERY unpredictable";
             loc = new Location();
+            loc.setDescription(forest);
             loc.setSymbol("^^^");
             
-            for(i=0; i < 2; i++) {
-                for(int j=0; j< 2; j++) {
+            for(int i=0; i <= 2; i++) {
+                for(int j = 0; j <= 1; j++) {
                     theMap.setLocation(i, j, loc);
-                }
+                    }
             }
             
             //Create the City of Aaron
@@ -118,25 +119,33 @@ public class GameControl {
                     "You are overwhelmed by the number of people\n" + 
                     "that are shopping and frolicking about";
             loc = new Location();
-            loc.setSymbol("[][][]");
-             for(i=0; i> 2 && i < MAX_ROW; i++) 
-                for(int j=0; j< 2 ; j++) 
-                    theMap.setLocation(i, j, loc);
-               
-        }
+            loc.setSymbol("|||");
+            loc.setDescription(town);
+             for( int i=0; i <= 1 ; i++){
+                 theMap.setLocation(3, i, loc);
+                 theMap.setLocation(4, i, loc);
+                }
             theGame.setMap(theMap);
+            
         }
+            
+        
         
         public static void displayMap()
         {
-            Map map = new Map();
-            map = theGame.getMap();
-           for(int i = 0; i < MAX_ROW; i++) 
-                for(int j = 0; j < MAX_COL; j++) {
-                    System.out.println(map.getLocation(0, 0).getSymbol());
-                    System.out.println("you have reached this point");
+            //for(int row = 0; row <= MAX_ROW; row++){ 
+            //for(int col = 0; col <= MAX_COL; col++) 
+            //{
+            Map theMap = theGame.getMap();
+            for(int i = 0; i < MAX_COL; i++){
+                System.out.println("\n");
+                for(int j = 0; j <MAX_ROW; j++){
+                    Location location = theMap.getLocation(i,j);
+                    String symbol = location.getSymbol();
+                    System.out.print(symbol + " ");
+                }
             }
-        }
+            
         
   /*      public static void createAnimalList()
         {
@@ -148,4 +157,6 @@ public class GameControl {
             // Save the animals in the game
             theGame.setAnimals(animals);
         } */
-    }
+    
+}
+}
