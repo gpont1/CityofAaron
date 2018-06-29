@@ -20,7 +20,7 @@ public class GameControl {
     private static final int MAX_COL = 5;
     // reference to a Game object
     private static Game theGame;
-    
+        
     public static void createNewGame(String name)
     {
         // Created the game object. Save it in the maindriver file
@@ -31,7 +31,7 @@ public class GameControl {
         thePlayer.setName(name);
         theGame.setPlayer(thePlayer);
         
-        
+        displayMap();        
         
     }
 
@@ -130,16 +130,15 @@ public class GameControl {
         public static void displayMap()
         {
             Map map = new Map();
-            Location loc = new Location();
-                       
-            for(int i = 0; i < MAX_ROW; i++) 
+            map = theGame.getMap();
+           for(int i = 0; i < MAX_ROW; i++) 
                 for(int j = 0; j < MAX_COL; j++) {
-                    map.setLocation(i,j, loc);
-                    System.out.println(loc.getSymbol());
-                }
+                    System.out.println(map.getLocation(0, 0).getSymbol());
+                    System.out.println("you have reached this point");
+            }
         }
         
-        public static void createAnimalList()
+  /*      public static void createAnimalList()
         {
             ArrayList<ListItem> animals = new ArrayList<ListItem>();
             animals.add(new ListItem("dog", 12));
@@ -148,5 +147,5 @@ public class GameControl {
             animals.add(new ListItem("horse", 4));
             // Save the animals in the game
             theGame.setAnimals(animals);
-        }
+        } */
     }

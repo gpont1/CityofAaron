@@ -8,6 +8,7 @@ import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityOfAaron.model.*;
 import byui.cit260.cityOfAaron.model.Player;
+import byui.cit260.cityOfAaron.control.*;
 /**
  *
  * @author humbl
@@ -120,7 +121,8 @@ public void startNewGame()
     // welcome message
     System.out.println("Welcome " + name + ", have fun playing.");
     // call the createNewGame( ) method. Pass the name as a parameter
-    GameControl.createNewGame(name);
+    GameControl gc = new GameControl();
+    gc.createNewGame(name);
     //show the game menu
     GameMenu gmv= new GameMenu();
     gmv.displayMenuView();
