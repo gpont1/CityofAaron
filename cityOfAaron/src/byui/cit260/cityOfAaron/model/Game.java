@@ -17,6 +17,8 @@ public class Game implements Serializable {
     //Declare private variables
     private String thePlayer;
     private Player player;
+    private Map Map;
+    private CropData CropData;
     
     public Game() {
     }
@@ -36,6 +38,24 @@ public class Game implements Serializable {
     public void setPlayer(Player player) {
         this.player = player;
     }
+
+    public Map getMap() {
+        return Map;
+    }
+
+    public void setMap(Map Map) {
+        this.Map = Map;
+    }
+
+    public CropData getCropData() {
+        return CropData;
+    }
+
+    public void setCropData(CropData CropData) {
+        this.CropData = CropData;
+    }
+    
+    
     
     
 

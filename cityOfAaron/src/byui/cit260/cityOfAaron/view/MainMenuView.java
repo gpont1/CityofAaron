@@ -97,29 +97,33 @@ public MainMenuView()
 // ===================================
 public void startNewGame()
 {
-    //Create a new Game object.
-    Game theGame = new Game();
-    
-    // Save a reference to it in the GameProjectclass.
-    CityOfAaron.setCurrentGame(theGame);
-    // Display the Banner Page.
-    System.out.println("Welcome to the city of Aaron.");
-    // Create a new Player object
-    Player thePlayer= new Player();
-    // Prompt for and get the user’s name.
+    // Show banner page
+   System.out.println(
+   "********************************************************\n" +
+   "* Welcome to the City of Aaron. You have been summoned *\n" +
+   "* by the High Priest to assume your role as ruler of *\n" +
+   "* the city. Your responsibility is to buy land, sell *\n" +
+   "* land, determine how much wheat to plant each year, *\n" +
+   "* and how much to set aside to feed the people. You *\n" +
+   "* will also be required to pay an annual tithe on the *\n" +
+   "* that is harvested. If you fail to provide *\n" +
+   "* enough wheat for the people to eat, people will die *\n" +
+   "* and your workforce will be diminished. Plan very *\n" +
+   "* carefully or you may find yourself in trouble with *\n" +
+   "* the people. And oh, watch out for plagues and rats! *\n" +
+   "********************************************************\n");  
+   
+   // Get player name, create player object, and save it in the Game
     String name;
     System.out.println("Please type in your first name: ");
     name = keyboard.next();
-    
-    // Save the user’s name in the Player object
-        thePlayer.setName(name);
-    // Save a reference to the player object in the Game object
-    theGame.setPlayer(thePlayer); 
-    
-    // Display a welcome message
-    System.out.println("Welcome "+ name + " have fun.");
-    
-    // Display the Game menu
+    // welcome message
+    System.out.println("Welcome " + name + ", have fun playing.");
+    // call the createNewGame( ) method. Pass the name as a parameter
+    GameControl.createNewGame(name);
+    //show the game menu
+    GameMenu gmv= new GameMenu();
+    gmv.displayMenuView();
 }
 
 public void startSavedGame()

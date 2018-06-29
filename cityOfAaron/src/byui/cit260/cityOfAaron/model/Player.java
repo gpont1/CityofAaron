@@ -38,7 +38,7 @@ public class Player implements Serializable {
 
     public void setGames(ArrayList<Game> games) {
         this.games = games;
-    }
+    }    
     
     
 
