@@ -139,14 +139,33 @@ public class GameControl {
             Map theMap = theGame.getMap();
             for(int i = 0; i < MAX_COL; i++){
                 System.out.println("\n");
-                for(int j = 0; j <MAX_ROW; j++){
+                for(int j = 0; j < MAX_ROW; j++){
                     Location location = theMap.getLocation(i,j);
                     String symbol = location.getSymbol();
                     System.out.print(symbol + " ");
                 }
             }
-            
+        }    
+        public static void createToolsList(){
+            ArrayList<ListItem> toolsList = new ArrayList<>();
+            ListItem pickaxe = new ListItem();
+            pickaxe.setName("Pickaxe");
+            pickaxe.setNumber(1);
+            toolsList.add(pickaxe);
+            ListItem sickle = new ListItem();
+            sickle.setName("Sickle");
+            sickle.setNumber(1);
+            toolsList.add(sickle);
+            ListItem hoe = new ListItem();
+            hoe.setName("Hoe");
+            hoe.setNumber(1);
+            toolsList.add(hoe);
+            toolsList.forEach((tools) -> {
+                System.out.println(tools.toString());
+        });
         
+        
+        }
   /*      public static void createAnimalList()
         {
             ArrayList<ListItem> animals = new ArrayList<ListItem>();
@@ -159,4 +178,4 @@ public class GameControl {
         } */
     
 }
-}
+
