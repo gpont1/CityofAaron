@@ -6,6 +6,8 @@
 package byui.cit260.cityOfAaron.control;
 
 import byui.cit260.cityOfAaron.model.CropData;
+import byui.cit260.cityOfAaron.exceptions.CropException;
+
 import java.util.Random;
 
 
@@ -44,7 +46,28 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     }
 }
 
-public static void buyLand(int landToBuy, int price, CropData cropData){
+public static void buyLand(int landToBuy, int price, CropData cropData) throws CropException {
+    
+
+
+    //check parameters - do they meet the contract
+    if(landToBuy < 0)
+        throw new CropException("A negative value was input");
+    int wheat = cropData.getWheatInStore();
+    if(wheat < landToBuy * price) 
+            throw new CropException("there is insufficient wheat to buy this much land");
+       
+    //add the number of acres to buy to the current number of acres
+    int acresOwned = cropData.getAcresOwned();
+    acresOwned += landToBuy;    
+    cropData.setAcresOwned(acresOwned);
+    
+    //deduct cost from wheat in store
+    wheat = cropData.getWheatInStore();
+    wheat -= (landToBuy * price);
+    cropData.setWheatInStore(wheat);
+    
+    
     
 }
 public static void plantCrops(int plantedCrops, CropData cropData){

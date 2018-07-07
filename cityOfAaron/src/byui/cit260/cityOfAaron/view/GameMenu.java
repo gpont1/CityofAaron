@@ -6,6 +6,9 @@
 package byui.cit260.cityOfAaron.view;
 
 import byui.cit260.cityOfAaron.control.GameControl;
+import byui.cit260.cityOfAaron.control.CropControl;
+
+import byui.cit260.cityOfAaron.view.CropView;
 
 /**
  *
@@ -60,6 +63,6 @@ public class GameMenu extends MenuView{
     }
     
     public void manageCrops() {
-        System.out.println("manageCrops");
+        CropView.buyLandView();
     }
 }

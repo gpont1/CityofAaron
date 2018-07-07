@@ -31,6 +31,7 @@ public class GameControl {
             thePlayer.setName(name);
             theGame.setThePlayer(thePlayer); 
             createMap();
+            createCropDataObject();
              
     }
 
@@ -44,7 +45,7 @@ public class GameControl {
             theCrops.setCropYield(3);
             theCrops.setNumberWhoDied(0);
             theCrops.setOffering(10);
-            theCrops.setWheatInStore(2700);
+            theCrops.setWheatInStore(1500);
             theCrops.setAcresOwned(1000);
             theCrops.setAcresPlanted(1000);
             theCrops.setHarvest(3000);
@@ -166,16 +167,38 @@ public class GameControl {
         
         
         }
-  /*      public static void createAnimalList()
+        /* 
+        public static void createAnimalList()
         {
             ArrayList<ListItem> animals = new ArrayList<ListItem>();
-            animals.add(new ListItem("dog", 12));
-            animals.add(new ListItem("chicken", 3));
-            animals.add(new ListItem("cow", 7));
-            animals.add(new ListItem("horse", 4));
+            animals.add(new ListItem("cows", 12));
+            animals.add(new ListItem("horses", 3));
+            animals.add(new ListItem("pigs", 7));
+            animals.add(new ListItem("goats", 4));
             // Save the animals in the game
             theGame.setAnimals(animals);
-        } */
-    
-}
+        }
+    */
+public static void createAnimalList()
+        {
+            ArrayList<ListItem> animals = new ArrayList<>();
+            ListItem dog = new ListItem();
+            dog.setName("Dog");
+            dog.setNumber(10);
+            animals.add(dog);
+            
+            ListItem cow = new ListItem();
+            cow.setName("Cow");
+            cow.setNumber(13);
+            animals.add(cow);
+            
+            ListItem horse = new ListItem();
+            cow.setName("Horse");
+            cow.setNumber(2);
+            animals.add(horse);
+            
+            theGame.setAnimals(animals);
+        }   
+    } 
+    }
 
