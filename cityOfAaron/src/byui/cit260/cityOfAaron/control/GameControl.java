@@ -167,19 +167,9 @@ public class GameControl {
         
         
         }
-        /* 
+        
+    
         public static void createAnimalList()
-        {
-            ArrayList<ListItem> animals = new ArrayList<ListItem>();
-            animals.add(new ListItem("cows", 12));
-            animals.add(new ListItem("horses", 3));
-            animals.add(new ListItem("pigs", 7));
-            animals.add(new ListItem("goats", 4));
-            // Save the animals in the game
-            theGame.setAnimals(animals);
-        }
-    */
-public static void createAnimalList()
         {
             ArrayList<ListItem> animals = new ArrayList<>();
             ListItem dog = new ListItem();
@@ -193,12 +183,14 @@ public static void createAnimalList()
             animals.add(cow);
             
             ListItem horse = new ListItem();
-            cow.setName("Horse");
-            cow.setNumber(2);
+            horse.setName("Horse");
+            horse.setNumber(2);
             animals.add(horse);
             
-            theGame.setAnimals(animals);
-        }   
+            animals.forEach((animal) -> {
+                System.out.println(animal.toString());
+        });
+              
     } 
     }
 
