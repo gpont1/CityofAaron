@@ -84,25 +84,20 @@ public static void setOffering(int percentage, CropData cropData){
 * @return wheatInStore
 */
 //Feed People Method - Created by Gordon Pont
-public static int feedPeople(int bushels ,CropData cropData)
+public static int feedPeople(int bushels ,CropData cropData) throws CropException
 {    
     int wheatForPeople = cropData.getWheatForPeople();
     int wheatInStore = cropData.getWheatInStore();         
             
-    if(wheatForPeople <= 0) 
+    if(wheatForPeople < 0) 
+       throw new CropException("A negative value was input");
+    if(wheatForPeople > wheatInStore) 
     {
-        System.out.println("Sorry, That is not a positive number!");
-        return -1;
-    } else if(wheatForPeople >= wheatInStore) 
-    {
-        System.out.println("Sorry, you don't have that much wheat");
-        return -1;
-    } else 
-    {
+        throw new CropException("Sorry, you don't have that much wheat");
+    }  
         wheatInStore -= wheatForPeople;
         cropData.setWheatInStore(wheatInStore);
         return wheatInStore;
-    }
 }
 
 }
