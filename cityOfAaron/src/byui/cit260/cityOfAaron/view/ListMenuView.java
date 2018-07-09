@@ -19,9 +19,9 @@ public class ListMenuView extends MenuView {
                 "**********************************\n" +
                 " 1 - View the animals in the storehouse\n" +
                 " 2 - View the tools in the storehouse\n" +
-                " 3 - View the porvisions in the storehouse\n" +
-                " 4 - View authors of this game\n" +
-                " 5 - Back to the Game Menu?\n",
+                " 3 - View the provisions in the storehouse\n" +
+                " 5 - View authors of this game\n" +
+                " 6 - Back to the Game Menu?\n",
             5);
     }
     
@@ -45,11 +45,11 @@ public class ListMenuView extends MenuView {
         }
     
     public void listAnimals() {
-        System.out.println("listAnimals");
+        GameControl.createAnimalList();
     }
     
     public void listTools() {
-        System.out.println("listTools");
+        GameControl.createToolsList();
     }
     
     public void listProvisions() {

@@ -9,6 +9,8 @@ import byui.cit260.cityOfAaron.control.*;
 import java.util.Scanner;
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityOfAaron.exceptions.CropException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author: Mitchell
@@ -71,15 +73,29 @@ public class CropView {
     }
     
     public static void feedPeopleView() {
-        // Prompt user to enter how many bushels of grain to give to the people
-        System.out.format("How many bushels of grain do you want to give to the people?%n ");
+        //Initialize Variables
+        boolean paramsNotOkay = false;
+        int bushels;
         
-        // Get the user's input and save it.
-        int bushels = keyboard.nextInt();
+        do
+        {
+            //Prompt user to enter how many bushels of grain to give to the people
+            System.out.format("How many bushels of grain do you want to give to the people?%n ");
         
-        // Call the feedPeople() method in the control layer 
-        CropControl.feedPeople(bushels, cropData);
-    }
+            // Get the user's input and save it.
+            bushels = keyboard.nextInt();
+        try
+        {
+            CropControl.feedPeople(bushels, cropData);
+        }
+        catch(CropException e)
+        {
+            System.out.println("I am Sorry, we cannot do that.");
+            System.out.println(e.getMessage());
+            paramsNotOkay = true;
+        }
+        }while(paramsNotOkay);
+    }   
     
     public static void plantCropsView() {
         // Prompt the user to input how many acres of land to plant

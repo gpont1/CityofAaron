@@ -49,7 +49,7 @@ public class CityOfAaron {
         //assertEquals(expResult, result);
     }
     
-    //Feed People Test - Method Created by Gordon Pont
+    /*//Feed People Test - Method Created by Gordon Pont
     public static void testFeedPeople() 
     {       
         System.out.println("feedPeople Test");
@@ -60,7 +60,7 @@ public class CityOfAaron {
         int result = CropControl.feedPeople(100, feedCrops);
         
         System.out.println("You have: " + result + " bushel(s) left in the stores");
-    }
+    }*/
     
     // main function -entry point for the program
     // runs the main menu
@@ -146,7 +146,6 @@ public class CityOfAaron {
         System.out.println(home.toString());
         
         testSellLand();
-        testFeedPeople();
     }
     
     

@@ -7,6 +7,7 @@ package byui.cit260.cityOfAaron.view;
 
 import byui.cit260.cityOfAaron.control.GameControl;
 import byui.cit260.cityOfAaron.control.CropControl;
+import byui.cit260.cityOfAaron.view.CropView;
 
 import byui.cit260.cityOfAaron.view.CropView;
 
@@ -24,7 +25,8 @@ public class GameMenu extends MenuView{
             " 2 - View/Print a list\n" +
             " 3 - Move to a new location\n" +
             " 4 - Manage the Crops\n" +
-            " 5 - Return to the Main Menu\n",
+            " 5 - Feed your workers\n" +
+            " 6 - Return to the Main Menu\n",
         5);
         }
    
@@ -42,7 +44,10 @@ public class GameMenu extends MenuView{
         case 4: // if the option is 4, call displaySaveGame( )
             manageCrops();
             break;
-        case 5:
+        case 5: //if the option is 5, call the feedPeopleView() method
+            CropView.feedPeopleView();
+            break;
+        case 6:
             break;
         }  
    }
