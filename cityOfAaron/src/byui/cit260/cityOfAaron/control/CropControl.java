@@ -69,9 +69,23 @@ public static void buyLand(int landToBuy, int price, CropData cropData) throws C
     
     
 }
-public static void plantCrops(int plantedCrops, CropData cropData){
-    
-}
+public static int plantCrops(int acresToPlant, CropData cropData) {
+        if (acresToPlant < 0) {
+            throw new CropException("A negative value was input");
+        }
+       
+        if (cropData.getAcresOwned() < acresToPlant) {
+            throw new CropException("You don't have that many Acres of Land to plant on!");
+        }
+        
+        if (cropData.getWheatInStore() < acresToPlant) {
+            throw new CropException("You dont have enough Wheat to plant that many Acres!");
+        }
+        
+        cropData.setWheatInStore(cropData.getWheatInStore() - acresToPlant);
+        return cropData.getWheatInStore();
+    }
+   
 public static void setOffering(int percentage, CropData cropData){
     
 }
