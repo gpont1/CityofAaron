@@ -22,7 +22,7 @@ public class ListMenuView extends MenuView {
                 " 3 - View the provisions in the storehouse\n" +
                 " 5 - View authors of this game\n" +
                 " 6 - Back to the Game Menu?\n",
-            5);
+            6);
     }
     
     @Override public void doAction(int option) {

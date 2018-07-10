@@ -46,8 +46,7 @@ public static int sellLand(int landPrice, int acresToSell, CropData cropData)
     }
 }
 
-public static void buyLand(int landToBuy, int price, CropData cropData) throws CropException {
-    
+public static void buyLand(int landToBuy, int price, CropData cropData) throws CropException {            
 
 
     //check parameters - do they meet the contract

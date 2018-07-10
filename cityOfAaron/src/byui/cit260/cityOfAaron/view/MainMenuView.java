@@ -77,12 +77,12 @@ public MainMenuView()
         break;
     case 2: // get and start a saved game
         startSavedGame();
-        break;
+                break;
     case 3: // get help menu
         displayHelpMenuView();
         break;
     case 4: // save game
-        displaySaveGameView();
+        GameControl.setSavedGame();
         break;
         case 5:
     System.out.println("Thanks for playing ... goodbye.");
@@ -115,26 +115,37 @@ public void startNewGame()
    "********************************************************\n");  
    
    // Get player name, create player object, and save it in the Game
-    String name;
-    System.out.println("Please type in your first name: ");
-    name = keyboard.next();
+            System.out.println("What is your name?: ");
+        String name = keyboard.next();
     // welcome message
     System.out.println("Welcome " + name + ", have fun playing.");
     // call the createNewGame( ) method. Pass the name as a parameter
     GameControl.createNewGame(name);
             
     //show the game menu
-    GameMenu gmv = new GameMenu();
-    gmv.displayMenu();
-    
+    GameMenu menu = new GameMenu();
+    menu.displayMenu();
     
    }
 
+// The startSavedGamemethod
+// Purpose: loads a saved game object from disk and start the game
+// Parameters: none
+// Returns: none
+// ===================================
 public void startSavedGame()
 {
-    System.out.println("Start saved game option selected.");
+    // get rid of \n character left in the stream
+        System.out.println("What is your name?: ");        
+        String name = keyboard.nextLine();
+        
+     // prompt user and get a file path
+    // call the getSavedGame( ) method in the GameControlclass to load the game
+    GameControl.getSavedGame(name);
+    // display the game menu for the loaded game}
+    GameMenu gmv = new GameMenu();
+    gmv.displayMenu();
 }
-
 public void displayHelpMenuView()
 {
         System.out.println("Display Help Menu option selected.");

@@ -27,7 +27,7 @@ public class GameMenu extends MenuView{
             " 4 - Manage the Crops\n" +
             " 5 - Feed your workers\n" +
             " 6 - Return to the Main Menu\n",
-        5);
+        6);
         }
    
    @Override public void doAction(int option) {

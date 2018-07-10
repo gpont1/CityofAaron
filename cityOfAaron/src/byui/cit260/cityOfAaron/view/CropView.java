@@ -29,6 +29,9 @@ public class CropView {
     * Returns: none
     */
     public static void buyLandView() {
+        
+        System.out.println("You have " + cropData.getAcresOwned());
+
         // Get the cost of land for this round.
         int price = CropControl.calcLandPrice();
         // Prompt the user to enter the number of acres to buy
