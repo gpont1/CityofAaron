@@ -8,6 +8,13 @@ package byui.cit260.cityOfAaron.control;
 import java.util.ArrayList;
 import cityofaaron.CityOfAaron;
 import byui.cit260.cityOfAaron.model.*;
+import byui.cit260.cityOfAaron.view.GameMenu;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+
+
 
 /**
  *
@@ -45,8 +52,8 @@ public class GameControl {
             theCrops.setCropYield(3);
             theCrops.setNumberWhoDied(0);
             theCrops.setOffering(10);
-            theCrops.setWheatInStore(1500);
-            theCrops.setAcresOwned(1000);
+            theCrops.setWheatInStore(1000);
+            theCrops.setAcresOwned(1500);
             theCrops.setAcresPlanted(1000);
             theCrops.setHarvest(3000);
             theCrops.setOfferingBushels(300);
@@ -134,6 +141,7 @@ public class GameControl {
         
         public static void displayMap()
         {
+            Game theGame = CityOfAaron.getCurrentGame();
             //for(int row = 0; row <= MAX_ROW; row++){ 
             //for(int col = 0; col <= MAX_COL; col++) 
             //{
@@ -190,7 +198,57 @@ public class GameControl {
             animals.forEach((animal) -> {
                 System.out.println(animal.toString());
         });
-              
-    } 
+        }
+                   
+        /**
+        * the setSavedGame method
+        * Purpose: save a  game to the disk
+        * Side Effect: the game reference in the driver is updated
+        */
+        
+        public static void setSavedGame()
+        {
+            Game theGame = CityOfAaron.getCurrentGame();
+            Player PlayerObject = theGame.getThePlayer();
+            
+            //String thePlayer = PlayerObject.getName();
+            String thePlayer = PlayerObject.getName();
+            try(FileOutputStream fops = new FileOutputStream(thePlayer))
+            {
+                ObjectOutputStream output = new ObjectOutputStream(fops);
+                output.writeObject(CityOfAaron.getCurrentGame());
+                fops.close();
+            }
+            catch(Exception e)
+            {
+                System.out.println("There was an error writing the saved game file\n");
+            } 
+        }
+        
+        /**
+        * the getSavedGamemethod
+        * Purpose: load a saved game from disk
+        * Parameters: the file path
+        * Returns: none
+        * Side Effect: the game reference in the driver is updated
+        */
+        
+        public static void getSavedGame(String filePath)
+        {
+            Game theGame = null;
+            
+            try(FileInputStream fips = new FileInputStream(filePath))
+            {
+                ObjectInputStream input = new ObjectInputStream(fips);
+                theGame = (Game) input.readObject();
+                CityOfAaron.setCurrentGame(theGame); 
+                fips.close();
+            }
+            catch(Exception e)
+            {
+                System.out.println("There was an error reading the saved game file\n");
+            }
+        }
+        
     }
 
