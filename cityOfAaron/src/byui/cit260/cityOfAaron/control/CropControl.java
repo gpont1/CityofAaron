@@ -69,7 +69,7 @@ public static void buyLand(int landToBuy, int price, CropData cropData) throws C
     
     
 }
-public static int plantCrops(int acresToPlant, CropData cropData) {
+public static int plantCrops(int acresToPlant, CropData cropData) throws Exception {
         if (acresToPlant < 0) {
             throw new CropException("A negative value was input");
         }
